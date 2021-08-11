@@ -1,0 +1,7 @@
+- name: install php
+  apt: name=php7.4 state=latest
+
+- name: install php-gd
+  apt: name=php7.4-gd state=latest
+  notify:
+    - Restart Apache

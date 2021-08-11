@@ -1,0 +1,7 @@
+- hosts: drupal_hosts
+  become: yes
+  roles: 
+   - apache
+   - php
+   - sql
+   - drupal

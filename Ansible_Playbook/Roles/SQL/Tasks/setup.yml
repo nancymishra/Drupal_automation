@@ -1,0 +1,8 @@
+- name: install mysql server
+  apt: name=mysql-server state=latest
+  
+- name: install mysql module for php
+  apt: name=php7.4-mysql state=latest
+
+- name: install phpmyadmin
+  apt: name=phpmyadmin state=latest

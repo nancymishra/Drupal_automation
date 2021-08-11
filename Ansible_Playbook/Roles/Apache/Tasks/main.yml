@@ -1,0 +1,14 @@
+- name: install apache
+  apt:
+   name: apache2
+   state: latest
+
+- name: change AllowOverride 
+  replace:
+   path: /etc/apache2/apache2.conf
+   regexp: 'AllowOverride None'
+   replace: 'AllowOverride All'
+  notify:
+    - Restart Apache
+
+   

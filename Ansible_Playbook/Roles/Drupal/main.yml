@@ -1,0 +1,19 @@
+- name: download drupal
+  unarchive: 
+   src: https://www.drupal.org/download-latest/tar.gz 
+   dest: /var/www/html
+   remote_src: yes
+
+- name: create settings.php
+  command: cp /var/www/html/drupal-9.2.3/sites/default/default.settings.php /var/www/html/drupal-9.2.3/sites/default/settings.php
+
+- name: create services.yml
+  command: cp /var/www/html/drupal-9.2.3/sites/default/default.services.yml /var/www/html/drupal-9.2.3/sites/default/services.yml
+
+- name: set permissions
+  file: 
+   dest: /var/www/html
+   owner: root
+   group: root 
+   mode: '777'
+   recurse: yes
